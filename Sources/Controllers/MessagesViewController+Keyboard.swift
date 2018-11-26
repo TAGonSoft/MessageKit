@@ -55,6 +55,7 @@ extension MessagesViewController {
     private func handleKeyboardDidChangeState(_ notification: Notification) {
         guard !isMessagesControllerBeingDismissed else { return }
 
+        print("Keyboard did change state")
         guard let keyboardStartFrameInScreenCoords = notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? CGRect else { return }
         guard !keyboardStartFrameInScreenCoords.isEmpty else {
             // WORKAROUND for what seems to be a bug in iPad's keyboard handling in iOS 11: we receive an extra spurious frame change
@@ -86,6 +87,7 @@ extension MessagesViewController {
         
         if maintainPositionOnKeyboardFrameChanged && differenceOfBottomInset != 0 {
             let contentOffset = CGPoint(x: messagesCollectionView.contentOffset.x, y: messagesCollectionView.contentOffset.y + differenceOfBottomInset)
+            print("MessageViewController set keybaord content ofset: \(contentOffset), diference: \(differenceOfBottomInset)")
             messagesCollectionView.setContentOffset(contentOffset, animated: false)
         }
         
