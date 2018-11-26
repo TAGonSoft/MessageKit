@@ -92,7 +92,7 @@ UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     open override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("Did load Messages View controller with version: 2.2")
+        print("Did load Messages View controller with version: 2.4")
         setupDefaults()
         setupSubviews()
         setupConstraints()

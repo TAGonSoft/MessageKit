@@ -30,6 +30,7 @@ extension MessagesViewController {
     // MARK: - Register / Unregister Observers
 
     internal func addKeyboardObservers() {
+        print("Add keyboard observers")
         NotificationCenter.default.addObserver(self, selector: #selector(MessagesViewController.handleKeyboardDidChangeState(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(MessagesViewController.handleTextViewDidBeginEditing(_:)), name: UITextView.textDidBeginEditingNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(MessagesViewController.adjustScrollViewTopInset), name: UIDevice.orientationDidChangeNotification, object: nil)
@@ -46,6 +47,7 @@ extension MessagesViewController {
 
     @objc
     private func handleTextViewDidBeginEditing(_ notification: Notification) {
+        print("Keyaboard did begin editing")
         if scrollsToBottomOnKeyboardBeginsEditing {
             guard let inputTextView = notification.object as? InputTextView, inputTextView === messageInputBar.inputTextView else { return }
             messagesCollectionView.scrollToBottom(animated: true)
