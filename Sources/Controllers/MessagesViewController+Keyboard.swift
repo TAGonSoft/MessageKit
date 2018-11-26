@@ -36,6 +36,7 @@ extension MessagesViewController {
     }
 
     internal func removeKeyboardObservers() {
+        print("Did remove keyboard observers")
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UITextView.textDidBeginEditingNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
