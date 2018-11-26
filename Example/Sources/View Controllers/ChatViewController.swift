@@ -55,10 +55,10 @@ class ChatViewController: MessagesViewController, MessagesDataSource {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        MockSocket.shared.connect(with: [SampleData.shared.steven, SampleData.shared.wu])
-            .onNewMessage { [weak self] message in
-                self?.insertMessage(message)
-        }
+//        MockSocket.shared.connect(with: [SampleData.shared.steven, SampleData.shared.wu])
+//            .onNewMessage { [weak self] message in
+//                self?.insertMessage(message)
+//        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -182,6 +182,8 @@ extension ChatViewController: MessageCellDelegate {
     
     func didTapMessage(in cell: MessageCollectionViewCell) {
         print("Message tapped")
+        let detail = DetailViewController()
+        self.present(UINavigationController(rootViewController: detail), animated: true, completion: nil)
     }
     
     func didTapCellTopLabel(in cell: MessageCollectionViewCell) {
