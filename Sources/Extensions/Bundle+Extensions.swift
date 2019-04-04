@@ -24,6 +24,8 @@
 
 import Foundation
 
+// swiftlint:disable explicit_acl
+// swiftlint:disable explicit_top_level_acl
 extension Bundle {
 
     internal static func messageKitAssetBundle() -> Bundle {
@@ -41,3 +43,5 @@ extension Bundle {
     }
 
 }
+// swiftlint:enable explicit_acl
+// swiftlint:enable explicit_top_level_acl

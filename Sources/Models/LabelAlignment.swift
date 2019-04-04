@@ -37,7 +37,8 @@ public struct LabelAlignment {
 }
 
 // MARK: - Equatable Conformance
-
+// swiftlint:disable explicit_top_level_acl
+// swiftlint:disable explicit_acl
 extension LabelAlignment: Equatable {
 
     public static func == (lhs: LabelAlignment, rhs: LabelAlignment) -> Bool {
@@ -45,3 +46,5 @@ extension LabelAlignment: Equatable {
     }
 
 }
+// swiftlint:enable explicit_top_level_acl
+// swiftlint:enable explicit_acl

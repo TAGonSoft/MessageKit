@@ -88,7 +88,8 @@ public struct AvatarPosition {
 }
 
 // MARK: - Equatable Conformance
-
+// swiftlint:disable explicit_top_level_acl
+// swiftlint:disable explicit_acl
 extension AvatarPosition: Equatable {
 
     public static func == (lhs: AvatarPosition, rhs: AvatarPosition) -> Bool {
@@ -96,3 +97,5 @@ extension AvatarPosition: Equatable {
     }
 
 }
+// swiftlint:enable explicit_top_level_acl
+// swiftlint:enable explicit_acl

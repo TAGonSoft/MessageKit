@@ -40,6 +40,8 @@ public struct HorizontalEdgeInsets {
     }
 }
 
+// swiftlint:disable explicit_top_level_acl
+// swiftlint:disable explicit_acl
 extension HorizontalEdgeInsets: Equatable {
 
     public static func == (lhs: HorizontalEdgeInsets, rhs: HorizontalEdgeInsets) -> Bool {
@@ -53,3 +55,5 @@ extension HorizontalEdgeInsets {
         return left + right
     }
 }
+// swiftlint:enable explicit_top_level_acl, explicit_acl
+// swiftlint:enable explicit_acl

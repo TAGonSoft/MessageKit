@@ -24,6 +24,8 @@
 
 import Foundation
 
+// swiftlint:disable explicit_acl
+// swiftlint:disable explicit_top_level_acl
 extension MessagesViewController {
 
     // MARK: - Register / Unregister Observers
@@ -97,3 +99,5 @@ extension MessagesViewController {
         return navigationController.navigationBar.frame
     }
 }
+// swiftlint:enable explicit_acl
+// swiftlint:enable explicit_top_level_acl

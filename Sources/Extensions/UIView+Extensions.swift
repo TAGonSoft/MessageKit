@@ -24,6 +24,8 @@
 
 import UIKit
 
+// swiftlint:disable explicit_top_level_acl
+// swiftlint:disable explicit_acl
 extension UIView {
     
     internal func fillSuperview() {
@@ -126,3 +128,5 @@ extension UIView {
         return constraints
     }
 }
+// swiftlint:enable explicit_top_level_acl
+// swiftlint:enable explicit_acl

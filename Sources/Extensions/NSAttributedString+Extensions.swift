@@ -24,6 +24,8 @@
 
 import Foundation
 
+// swiftlint:disable explicit_acl
+// swiftlint:disable explicit_top_level_acl
 extension NSAttributedString {
 
     internal func width(considering height: CGFloat) -> CGFloat {
@@ -34,3 +36,5 @@ extension NSAttributedString {
         
     }
 }
+// swiftlint:enable explicit_acl
+// swiftlint:enable explicit_top_level_acl

@@ -24,6 +24,8 @@
 
 import Foundation
 
+// swiftlint:disable explicit_acl
+// swiftlint:disable explicit_top_level_acl
 extension UIColor {
 
     internal static let incomingGray = UIColor(red: 230/255, green: 230/255, blue: 235/255, alpha: 1.0)
@@ -37,3 +39,5 @@ extension UIColor {
     internal static let sendButtonBlue = UIColor(red: 15/255, green: 135/255, blue: 255/255, alpha: 1.0)
 
 }
+// swiftlint:enable explicit_acl
+// swiftlint:enable explicit_top_level_acl

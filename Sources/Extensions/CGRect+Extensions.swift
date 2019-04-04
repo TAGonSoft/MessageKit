@@ -24,6 +24,8 @@
 
 import Foundation
 
+// swiftlint:disable explicit_acl
+// swiftlint:disable explicit_top_level_acl
 extension CGRect {
     
     internal init(_ x: CGFloat, _ y: CGFloat, _ w: CGFloat, _ h: CGFloat) {
@@ -31,3 +33,5 @@ extension CGRect {
     }
 
 }
+// swiftlint:enable explicit_acl
+// swiftlint:enable explicit_top_level_acl

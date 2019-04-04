@@ -23,7 +23,8 @@
  */
 
 import Foundation
-
+// swiftlint:disable explicit_acl
+// swiftlint:disable explicit_top_level_acl
 extension UIEdgeInsets {
 
     internal var vertical: CGFloat {
@@ -35,3 +36,5 @@ extension UIEdgeInsets {
     }
 
 }
+// swiftlint:enable explicit_acl
+// swiftlint:enable explicit_top_level_ac
