@@ -28,14 +28,14 @@ import Foundation
 @available(*, deprecated, message: "`Sender` has been replaced with the `SenderType` protocol in 3.0.0")
 public struct Sender: SenderType {
 
-    /// MARK: - Properties
+    // MARK: - Properties
 
     /// The unique String identifier for the sender.
     ///
     /// Note: This value must be unique across all senders.
     public let senderId: String
 
-    @available(*, deprecated, message: "`id` has been renamed `senderId` as defined in the `SenderType` protocol")
+    @available(*, deprecated, renamed: "senderId", message: "`id` has been renamed `senderId` as defined in the `SenderType` protocol")
     public var id: String {
         return senderId
     }
