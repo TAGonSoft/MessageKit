@@ -2,6 +2,84 @@
 
 The changelog for `MessageKit`. Also see the [releases](https://github.com/MessageKit/MessageKit/releases) on GitHub.
 
+## 3.4.0
+
+### Changed
+
+- **Breaking Change** Dropped support for iOS 11, added support for Swift 5.3 SPM and XCode 12 [#1464](https://github.com/MessageKit/MessageKit/pull/1464) by [@kaspik](https://github.com/kaspik)
+
+## 3.3.0
+
+### Fixed
+
+- Fixes missing insets for link preview messages [#1447](https://github.com/MessageKit/MessageKit/pull/1447) by [@bguidolim](https://github.com/bguidolim)
+
+### Added
+
+- Show message time by swiping left over the chat controller. [#1444](https://github.com/MessageKit/MessageKit/pull/1444) by [@amirpirzad](https://github.com/amirpirzad)
+
+## 3.2.0
+
+### Fixed
+
+- Fixes an incorrect animation of message cells while dragging to dismiss the keyboard [#1433](https://github.com/MessageKit/MessageKit/pull/1433) by [@lhr000lhrmega](https://github.com/lhr000lhrmega)
+- Fixes an issue where the video message playback icon was too dark when in dark mode [#1386](https://github.com/MessageKit/MessageKit/pull/1386) by [@kinoroy](https://github.com/kinoroy)
+- Fixes an issue where the video message playback button triangle was not centered within the circle [#1386](https://github.com/MessageKit/MessageKit/pull/1386) by [@kinoroy](https://github.com/kinoroy)
+
+### Added
+
+- Added option to use Photo messages with remote image URL in Example project [#1294](https://github.com/MessageKit/MessageKit/pull/1294) by [@martinpucik](https://github.com/martinpucik)
+- **Breaking Change** Added new `linkPreview` message type, which display a subclass of `TextMessageCell` with support to present title, teaser and a thumbnail image for a link [#1310](https://github.com/MessageKit/MessageKit/pull/1310) by [@bguidolim](https://github.com/bguidolim)
+- Added a SwiftUI view using MessageKit in the Example Project by [#1410](https://github.com/MessageKit/MessageKit/pull/1410) [@kinoroy](https://github.com/kinoroy)
+
+### Changed
+
+- **Breaking Change** Dropped support for iOS 9 and iOS 10 [#1261](https://github.com/MessageKit/MessageKit/pull/1261) by [@kaspik](https://github.com/kaspik)
+- Converted internal, static colors into color assets to better support dark and high contrast modes [#1386](https://github.com/MessageKit/MessageKit/pull/1386) by [@kinoroy](https://github.com/kinoroy)
+- Change the video message playback button to use a UIVisualEffectsView to better match the look and feel of iMessage. [#1386](https://github.com/MessageKit/MessageKit/pull/1386) by [@kinoroy](https://github.com/kinoroy)
+
+## 3.1.0
+
+### Fixed
+
+ - Set the proper notification to invalidate layout. MessageKit now relies on `UIApplication` orientation notification instead of `UIDevice`, which invalidates the layout only when it is needed. [#1126](https://github.com/MessageKit/MessageKit/pull/1126) by [@bguidolim](https://github.com/bguidolim)
+ 
+ - Fixed `requiredInitialScrollViewBottomInset` when `inputAccessoryView` is `nil` [#1218](https://github.com/MessageKit/MessageKit/pull/1218) by [@aabosh](https://github.com/aabosh) 
+
+ - Fixed `MessagesCollectionView.scrollToBottom(animated:)` method to properly handle calls made early in the view lifecycle. [#1110](https://github.com/MessageKit/MessageKit/pull/1110) by [@marcetcheverry](https://github.com/marcetcheverry)
+ 
+ - Fixed `TypingIndicator` `dotColor` for light mode. [#1266](https://github.com/MessageKit/MessageKit/pull/1266) by [@lewis-smith](https://github.com/lewis-smith)
+
+### Added
+
+- Add missing textAlignment and textInsets assignments to layoutCellTopLabel method in MessageContentCell. [#1117](https://github.com/MessageKit/MessageKit/pull/1117) by [@mdescalzo](https://github.com/mdescalzo)
+
+- Add support for styling NSLinkAttribute with existing urlAttributes in MessageLabel. [#1091](https://github.com/MessageKit/MessageKit/pull/1091) by [@marcetcheverry](https://github.com/marcetcheverry)
+
+- Add loading indicator to AudioMessageCell. [#1084](https://github.com/MessageKit/MessageKit/pull/1084) by [@marcetcheverry](https://github.com/marcetcheverry)
+
+- Add support for Dark Mode [#1189](https://github.com/MessageKit/MessageKit/pull/1189) by [@Vlada31R](https://github.com/Vlada31R)
+
+- Add support for `scrollToLastItem` and `scrollsToLastItemOnKeyboardBeginsEditing` [#1247](https://github.com/MessageKit/MessageKit/pull/1247) by [@hyouuu](https://github.com/hyouuu)
+
+- Added `MessageCellDelegate.didTapImage(in cell: MessageCollectionViewCell)` [#1166](https://github.com/MessageKit/MessageKit/pull/1166) by [@domeniconicoli](https://github.com/domeniconicoli), [#1278](https://github.com/MessageKit/MessageKit/pull/1278) by [@bguidolim](https://github.com/bguidolim), [1285](https://github.com/MessageKit/MessageKit/pull/1285) by [@austinwright](https://github.com/austinwright)
+
+- Added missing cellTopLabelAlignment to MessageSizeCalculator. [#1113](https://github.com/MessageKit/MessageKit/pull/1113) by [@marcetcheverry](https://github.com/marcetcheverry)
+
+### Changed
+
+- **Breaking Change** Updated to Swift 5.0 [#1039](https://github.com/MessageKit/MessageKit/pull/1039) by [@nathantannar4](https://github.com/nathantannar4)
+
+- Lazily initialize the MessageInputBar on MessagesViewController. [#1092](https://github.com/MessageKit/MessageKit/pull/1092) by [@marcetcheverry](https://github.com/marcetcheverry)
+
+### Deprecated
+
+- Deprecated `SenderType.id` in favour of `SenderType.senderId`. This change was previously meant for 3.0.0. [#1201](https://github.com/MessageKit/MessageKit/pull/1201) by [@kinoroy](https://github.com/kinoroy)
+
+### Removed
+
+- **Breaking Change** `MessageInputBar`, and `MessageInputBarDelegate` have been obsoleted. Use `InputBarAccessoryView` and `InputBarAccessoryViewDelegate` respectively. This change was previously meant for 3.0.0. [#1201](https://github.com/MessageKit/MessageKit/pull/1201) by [@kinoroy](https://github.com/kinoroy)
+
 ## 3.0.0
 
 ### Dependency Changes

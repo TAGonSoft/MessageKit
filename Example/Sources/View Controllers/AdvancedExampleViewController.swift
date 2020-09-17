@@ -26,6 +26,7 @@ import UIKit
 import MapKit
 import MessageKit
 import InputBarAccessoryView
+import PINRemoteImage
 
 final class AdvancedExampleViewController: ChatViewController {
         
@@ -129,7 +130,6 @@ final class AdvancedExampleViewController: ChatViewController {
         messageInputBar.sendButton.image = #imageLiteral(resourceName: "ic_up")
         messageInputBar.sendButton.title = nil
         messageInputBar.sendButton.imageView?.layer.cornerRadius = 16
-        messageInputBar.middleContentViewPadding.right = -38
         let charCountButton = InputBarButtonItem()
             .configure {
                 $0.title = "0/140"
@@ -148,7 +148,9 @@ final class AdvancedExampleViewController: ChatViewController {
                 item.setTitleColor(color, for: .normal)
         }
         let bottomItems = [.flexibleSpace, charCountButton]
-        messageInputBar.middleContentViewPadding.bottom = 8
+        
+        configureInputBarPadding()
+        
         messageInputBar.setStackViewItems(bottomItems, forStack: .bottom, animated: false)
 
         // This just adds some more flare
@@ -162,6 +164,22 @@ final class AdvancedExampleViewController: ChatViewController {
                     item.imageView?.backgroundColor = UIColor(white: 0.85, alpha: 1)
                 })
         }
+    }
+    
+    /// The input bar will autosize based on the contained text, but we can add padding to adjust the height or width if neccesary
+    /// See the InputBar diagram here to visualize how each of these would take effect:
+    /// https://raw.githubusercontent.com/MessageKit/MessageKit/master/Assets/InputBarAccessoryViewLayout.png
+    private func configureInputBarPadding() {
+    
+        // Entire InputBar padding
+        messageInputBar.padding.bottom = 8
+        
+        // or MiddleContentView padding
+        messageInputBar.middleContentViewPadding.right = -38
+
+        // or InputTextView padding
+        messageInputBar.inputTextView.textContainerInset.bottom = 8
+        
     }
     
     // MARK: - Helpers
@@ -260,7 +278,6 @@ final class AdvancedExampleViewController: ChatViewController {
         }
         return nil
     }
-
 }
 
 // MARK: - MessagesDisplayDelegate
@@ -352,6 +369,14 @@ extension AdvancedExampleViewController: MessagesDisplayDelegate {
         button.isUserInteractionEnabled = false // respond to accessoryView tap through `MessageCellDelegate`
         accessoryView.layer.cornerRadius = accessoryView.frame.height / 2
         accessoryView.backgroundColor = UIColor.primaryColor.withAlphaComponent(0.3)
+    }
+
+    func configureMediaMessageImageView(_ imageView: UIImageView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
+        if case MessageKind.photo(let media) = message.kind, let imageURL = media.url {
+            imageView.pin_setImage(from: imageURL)
+        } else {
+            imageView.pin_cancelImageDownload()
+        }
     }
     
     // MARK: - Location Messages
